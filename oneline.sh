@@ -23,7 +23,7 @@ chgrp 1000 /root/taky-data
 chown 1000 -R /root/taky-data
 
 #Downloading docker compose template
-wget https://github.com/skadakar/taky-itak/blob/main/docker-compose.yaml
+wget https://github.com/skadakar/taky-itak/blob/main/docker-compose.yml
 
 #Starting taky servers in docker
 docker-compose up -d
