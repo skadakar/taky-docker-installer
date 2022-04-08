@@ -9,7 +9,7 @@ I take no responsibility for anything here.. none!
 
 ### Setting up an itak compatible taky server using docker.
 
-* Setup a 5dollar dropplet on digitalocean.com
+* Setup a 5dollar dropplet on [DigitalOcean](https://digitalocean.com)
 ![image](https://user-images.githubusercontent.com/25975089/162523986-470dbc4b-65dc-44db-a32f-a07b39c645f8.png)
 
 * SSH into the droplet and run the following commands in order.
