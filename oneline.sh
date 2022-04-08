@@ -40,16 +40,21 @@ wget https://raw.githubusercontent.com/skadakar/taky-itak/main/template/itak.pre
 
 #Adding correct IP to templates
 sed -i "s|0.0.0.0|$IP|g" *.pref
-rm /root/dp-base/fts.pref
+rm /root/dp-base/certs/fts.pref
 
 #Creating itak package
-cp itak.pref /root/dp-base/preference.pref
-zip -r itak.zip /root/dp-base
+cp /root/itak.pref /root/dp-base/certs/preference.pref
+cd root/dp-base
+zip -r itak.zip *
+mv atak.zip /root/itak.zip
+cd /root/
 
 #Creating atak package
-cp atak.pref /root/dp-base/preference.pref
-zip -r atak.zip /root/dp-base
-
+cp /root/atak.pref /root/dp-base/certs/preference.pref
+cd root/dp-base
+zip -r atak.zip *
+mv atak.zip /root/atak.zip
+cd /root/
 #Sending files to transfer.sh where they will live for up to 14 days.
 
 itaklink=$(curl --upload-file /root/itak.zip https://transfer.sh/itak.zip)
