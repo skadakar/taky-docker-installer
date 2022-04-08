@@ -45,14 +45,14 @@ rm /root/dp-base/certs/fts.pref
 #Creating itak package
 cp /root/itak.pref /root/dp-base/certs/preference.pref
 cd root/dp-base
-zip -r itak.zip *
+zip itak.zip *
 mv atak.zip /root/itak.zip
 cd /root/
 
 #Creating atak package
 cp /root/atak.pref /root/dp-base/certs/preference.pref
 cd root/dp-base
-zip -r atak.zip *
+zip atak.zip *
 mv atak.zip /root/atak.zip
 cd /root/
 #Sending files to transfer.sh where they will live for up to 14 days.
