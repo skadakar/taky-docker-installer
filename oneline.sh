@@ -45,11 +45,12 @@ sed -i "s|fts.pref|preference.pref|g" /root/dp-base/MANIFEST/manifest.xml
 
 #Creating itak package
 cp /root/itak.pref /root/dp-base/certs/preference.pref
-zip -r itak.zip /root/dp-base/
+cd /root/dp-base/ && zip -r /root/itak.zip . && cd /root
+
 
 #Creating atak package
 cp /root/atak.pref /root/dp-base/certs/preference.pref
-zip -r atak.zip /root/dp-base/
+cd /root/dp-base/ && zip -r /root/atak.zip . && cd /root
 #Sending files to transfer.sh where they will live for up to 14 days.
 
 itaklink=$(curl --upload-file /root/itak.zip https://transfer.sh/itak.zip)
