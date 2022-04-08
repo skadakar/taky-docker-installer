@@ -1,10 +1,11 @@
 # How to setup a taky server in a way that works with itak
 
-Warning: This guide will assume you are a moron and insult your intelligence.. 
-
+#### Warning: 
+```
+This guide will assume you are a moron and insult your intelligence.. 
 It will also assume you can make yourself an SSH keypair and upload the public key to digital ocean and use SSH. 
-
 I take no responsibility for anything here.. none!
+```
 
 ### Setting up an itak compatible taky server using docker.
 
