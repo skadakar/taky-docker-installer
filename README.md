@@ -44,6 +44,21 @@ curl --upload-file /root/taky-data/client.zip https://transfer.sh/client.zip
 * Download the .zip file, open it, rename `fts.pref` to `preference.pref`
 * Change cert locations like showed:
 ```
-asd
+<?xml version='1.0' encoding='ASCII' standalone='yes'?>
+<preferences>
+  <preference version="1" name="cot_streams">
+    <entry key="count" class="class java.lang.Integer">1</entry>
+    <entry key="description0" class="class java.lang.String">taky.local</entry>
+    <entry key="enabled0" class="class java.lang.Boolean">false</entry>
+    <entry key="connectString0" class="class java.lang.String">XXXXX:8089:ssl</entry>
+  </preference>
+  <preference version="1" name="com.atakmap.app_preferences">
+    <entry key="displayServerConnectionWidget" class="class java.lang.Boolean">true</entry>
+    <entry key="caLocation" class="class java.lang.String">cert/server.p12</entry>
+    <entry key="caPassword" class="class java.lang.String">atakatak</entry>
+    <entry key="clientPassword" class="class java.lang.String">atakatak</entry>
+    <entry key="certificateLocation" class="class java.lang.String">cert/client.p12</entry>
+  </preference>
+</preferences>
 ```
 * Distribute as needed
