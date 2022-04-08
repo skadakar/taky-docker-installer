@@ -1,7 +1,6 @@
-# TAKY ATTEMPT
+# Basic SSL enabled taky setup for oneliner install
 version: "3.7"
 services:
-#taky
    taky-cot:
     image: skadakar/taky:0.8.2
     container_name: taky-cot
