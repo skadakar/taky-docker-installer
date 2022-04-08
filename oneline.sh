@@ -24,12 +24,13 @@ chown 1000 -R /root/taky-data
 
 #Downloading docker compose template 
 wget https://raw.githubusercontent.com/skadakar/taky-itak/main/docker-compose.yml
+docker pull skadakar/taky:0.8.2
 
 #Starting taky servers in docker 
-docker-compose up -d && sleep 30s
+docker-compose up -d && sleep 90s
 
 #Generating certifiactes and extracting them
-docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client"
+docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client" && sleep 5s
 unzip /root/taky-data/client.zip  -d /root/dp-base
 
 #Getting templates
