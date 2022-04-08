@@ -22,7 +22,7 @@ mkdir -p /root/taky-data
 chgrp 1000 /root/taky-data
 chown 1000 -R /root/taky-data
 
-#Downloading docker compose template
+#Downloading docker compose template 
 wget https://raw.githubusercontent.com/skadakar/taky-itak/main/docker-compose.yml
 
 #Starting taky servers in docker
