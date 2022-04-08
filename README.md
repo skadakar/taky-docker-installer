@@ -26,10 +26,7 @@ echo "IP="$ip4 >> .env
 mkdir -p /root/taky-data
 chgrp 1000 /root/taky-data
 chown 1000 -R /root/taky-data
-```
-* Copy this file to your taky server https://github.com/skadakar/taky-itak/blob/main/docker-compose.yaml
-* Write the following commands
-```
+wget https://github.com/skadakar/taky-itak/blob/main/docker-compose.yaml
 docker-compose up -d
 ```
 * Now your server is running, now you need access. Run the following commands
