@@ -29,17 +29,21 @@ chown 1000 -R /root/taky-data
 * Copy this file to your taky server https://github.com/skadakar/taky-itak/blob/main/docker-compose.yaml
 * Write the following commands
 ```
-docker exec -it taky-cot /bin/bash
-cd /data/
-takyctl -c /data/conf/taky.conf build_client itak
+docker-compose up -d
 ```
-* Exit the new shell with ctrl+d
-* Enter the following commands:
+* Now your server is running, now you need access. Run the following commands
 ```
-cd /root/taky-data/
-curl --upload-file ./itak.zip https://transfer.sh/itak.zip
+docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client"
+curl --upload-file /root/taky-data/client.zip https://transfer.sh/client.zip
 ```
 
 * Go to the path returned from the last command in a browser.
+* This file is ready to be distributed for ATAK
+
+### Modify the zip to work with itak
 * Download the .zip file, open it, rename `fts.pref` to `preference.pref`
+* Change cert locations like showed:
+```
+asd
+```
 * Distribute as needed
