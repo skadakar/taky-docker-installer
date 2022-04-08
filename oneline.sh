@@ -1,4 +1,4 @@
-/bin/sh
+#/bin/bash
 
 #Getting required software
 apt-get update
