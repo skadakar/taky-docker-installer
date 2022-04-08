@@ -56,7 +56,7 @@ itaklink=$(curl --upload-file /root/itak.zip https://transfer.sh/itak.zip)
 ataklink=$(curl --upload-file /root/atak.zip https://transfer.sh/atak.zip)
 
 #Post links
-
+echo " "
 echo "Download and make copies of the following files for the different platforms"
 echo " "
 echo "Itak:" $itaklink
