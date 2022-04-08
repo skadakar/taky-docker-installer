@@ -31,7 +31,8 @@ docker-compose up -d
 sleep 30s
 
 #Generating certifiactes and extracting them
-sleep 10s
+echo "Will attempt building the client"
+sleep 5s
 docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client"
 sleep 10s
 unzip /root/taky-data/client.zip  -d /root/dp-base
