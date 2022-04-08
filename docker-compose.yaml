@@ -1,5 +1,6 @@
 version: "3.7"
 services:
+#taky
    taky-cot:
     image: skadakar/taky:0.8.2
     container_name: taky-cot
@@ -13,6 +14,9 @@ services:
       - ssl_enabled=true
       - client_cert_required=true
       - mode=cot
+      - public_ip=${IP}
+      - hostname=${ID}
+      - fqdnoverride=${IP}:8443
     volumes:
       - /root/taky-data/:/data
    taky-data:
@@ -28,6 +32,8 @@ services:
       - ssl_enabled=true
       - client_cert_required=true
       - mode=data
+      - public_ip=${ID}
+      - hostname=${ID}
+      - fqdnoverride=${IP}:8443
     volumes:
       - /root/taky-data/:/data
-
