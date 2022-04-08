@@ -27,10 +27,13 @@ wget https://raw.githubusercontent.com/skadakar/taky-itak/main/docker-compose.ym
 docker pull skadakar/taky:0.8.2
 
 #Starting taky servers in docker 
-docker-compose up -d && sleep 20s
+docker-compose up -d
+sleep 30s
 
 #Generating certifiactes and extracting them
-docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client" && sleep 10s
+sleep 10s
+docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client"
+sleep 10s
 unzip /root/taky-data/client.zip  -d /root/dp-base
 
 #Getting templates
