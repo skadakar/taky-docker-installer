@@ -1,0 +1,40 @@
+# TAKY ATTEMPT
+version: "3.7"
+services:
+#taky
+   taky-cot:
+    image: skadakar/taky:0.8.2
+    container_name: taky-cot
+    user: "1000"
+    network_mode: host
+    ports:
+      - 8087:8087
+      - 8089:8089
+    restart: unless-stopped
+    environment:
+      - ssl_enabled=true
+      - client_cert_required=true
+      - mode=cot
+      - public_ip=${IP}
+      - hostname=${ID}
+      - fqdnoverride=${IP}:8443
+    volumes:
+      - /root/taky-data/:/data
+   taky-data:
+    image: skadakar/taky:0.8.2
+    container_name: taky-data
+    user: "1000"
+    network_mode: host
+    ports:
+      - 8080:8080
+      - 8443:8443
+    restart: unless-stopped
+    environment:
+      - ssl_enabled=true
+      - client_cert_required=true
+      - mode=data
+      - public_ip=${ID}
+      - hostname=${ID}
+      - fqdnoverride=${IP}:8443
+    volumes:
+      - /root/taky-data/:/data
