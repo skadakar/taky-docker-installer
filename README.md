@@ -5,9 +5,10 @@
 This guide will assume you are a moron and insult your intelligence.. 
 It will also assume you can make yourself an SSH keypair and upload the public key to digital ocean and use SSH. 
 I take no responsibility for anything here.. none!
-
-If this does not work for you setting up a server is not for you and you should look at larp stuff like https://www.ares-alpha.com/
 ```
+If this does not work for you setting up a server is not for you and you should look at airsoft/larp stuff like https://www.ares-alpha.com/
+
+
 
 ### Setting up an itak compatible taky server using docker.
 
