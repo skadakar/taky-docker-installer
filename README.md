@@ -11,7 +11,17 @@ You must have port 8089 and 8443 open for this to work, the guide and the script
 If this does not work for you setting up a server is not for you and you should look at airsoft/larp stuff like https://www.ares-alpha.com/
 
 ### Method 1: Run a shady script from some guy you don't know!
-```curl -sf -L https://raw.githubusercontent.com/skadakar/taky-itak/main/oneline.sh | sudo sh```
+```
+curl -sf -L https://raw.githubusercontent.com/skadakar/taky-itak/main/oneline.sh | sudo sh
+```
+
+Troubleshooting:
+If it fails, remove the files and start over like so:
+```
+docker-compose down --remove-orphans
+rm *.*
+rm -rf dp-base/ taky-data/
+```
 
 ### Method 2: Setting up an itak compatible taky server using docker on digital ocean.
 
