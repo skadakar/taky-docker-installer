@@ -2,11 +2,15 @@
 
 #### Disclaimer: 
 ```
-This guide will assume you are a moron and insult your intelligence.. 
-It will also assume you are able to remote into a ubuntu instance, I recommend digitalocean.com 
-I take no responsibility for anything here.. none!
+This guide will take you through the needed steps to setup a taky server using docker.
+It will also create the client files for users to connect.
 
-You must have port 8089 and 8443 open for this to work, the guide and the script assumes you run a pretty standard ubuntu install.
+It assumes that you know how to remote into a server and that you are running a pretty standard ubuntu. 
+It's only been validated on a digitalocean.com droplet. 
+
+You must have port 8089 and 8443 open for this to work.
+
+I take no responsibility for anything here.. none!
 ```
 If this does not work for you setting up a server is not for you and you should look at airsoft/larp stuff like https://www.ares-alpha.com/
 
