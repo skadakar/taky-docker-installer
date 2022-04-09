@@ -88,13 +88,12 @@ cd /root/dp-base/ && zip -r /root/atak.zip . && cd /root
 ```
 * Distribute as needed
 
-If you don't know how to get these files out of the server use the following:
+If you don't know how to get these files out of the server use the following, it will upload the files to a temporary (14day) semi-public store:
 ```
 
 itaklink=$(curl --upload-file /root/itak.zip https://transfer.sh/itak.zip)
 ataklink=$(curl --upload-file /root/atak.zip https://transfer.sh/atak.zip)
 
-#Post links
 echo "Download and make copies of the following files for the different platforms"
 echo "Itak:" $itaklink
 echo "Atak:" $ataklink
