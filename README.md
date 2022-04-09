@@ -30,49 +30,68 @@ rm -rf dp-base/ taky-data/
 
 * SSH into the droplet and run the following commands in order.
 ```
+#Getting required software
 apt-get update
 apt-get upgrade -y
+apt-get install zip -y
+sudo apt-get install unzip -y
 apt-get install docker -y
 apt-get install docker-compose -y
-cd /root/
+
+#This will be your work folder
+cd /root/ 
+#Setting env variables needed for later
 hostname=$(hostname)
 ip4=$(curl ifconfig.io/ip)
 echo "ID="$hostname > .env
 echo "IP="$ip4 >> .env
+export $(grep -v '^#' .env | xargs)
+
+#Creating folders
 mkdir -p /root/taky-data
 chgrp 1000 /root/taky-data
 chown 1000 -R /root/taky-data
-wget https://github.com/skadakar/taky-itak/blob/main/docker-compose.yaml
-docker-compose up -d
-```
-* Now your server is running, now you need access. Run the following commands
-```
-docker exec -it taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client"
-curl --upload-file /root/taky-data/client.zip https://transfer.sh/client.zip
-```
 
-* Go to the path returned from the last command in a browser.
-* This file is ready to be distributed for ATAK
+#Downloading docker compose template 
+wget https://raw.githubusercontent.com/skadakar/taky-itak/main/docker-compose.yml
+docker pull skadakar/taky:0.8.2
 
-### Modify the zip to work with itak
-* Download the .zip file, open it, rename `fts.pref` to `preference.pref`
-* Change cert locations like showed:
-```
-<?xml version='1.0' encoding='ASCII' standalone='yes'?>
-<preferences>
-  <preference version="1" name="cot_streams">
-    <entry key="count" class="class java.lang.Integer">1</entry>
-    <entry key="description0" class="class java.lang.String">taky.local</entry>
-    <entry key="enabled0" class="class java.lang.Boolean">false</entry>
-    <entry key="connectString0" class="class java.lang.String">XXXXX:8089:ssl</entry>
-  </preference>
-  <preference version="1" name="com.atakmap.app_preferences">
-    <entry key="displayServerConnectionWidget" class="class java.lang.Boolean">true</entry>
-    <entry key="caLocation" class="class java.lang.String">cert/server.p12</entry>
-    <entry key="caPassword" class="class java.lang.String">atakatak</entry>
-    <entry key="clientPassword" class="class java.lang.String">atakatak</entry>
-    <entry key="certificateLocation" class="class java.lang.String">cert/client.p12</entry>
-  </preference>
-</preferences>
+#Starting taky servers in docker 
+docker-compose up -d && sleep 30s
+
+#Generating certifiactes and extracting them
+echo "Will attempt building the client"
+docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client" && sleep 10s
+unzip /root/taky-data/client.zip  -d /root/dp-base
+
+#Getting templates
+wget https://raw.githubusercontent.com/skadakar/taky-itak/main/template/atak.pref
+wget https://raw.githubusercontent.com/skadakar/taky-itak/main/template/itak.pref
+
+#Adding correct IP to templates
+sed -i "s|0.0.0.0|$IP|g" *.pref
+rm /root/dp-base/certs/fts.pref
+sed -i "s|fts.pref|preference.pref|g" /root/dp-base/MANIFEST/manifest.xml
+
+#Creating itak package
+cp /root/itak.pref /root/dp-base/certs/preference.pref
+cd /root/dp-base/ && zip -r /root/itak.zip . && cd /root
+
+
+#Creating atak package
+cp /root/atak.pref /root/dp-base/certs/preference.pref
+cd /root/dp-base/ && zip -r /root/atak.zip . && cd /root
 ```
 * Distribute as needed
+
+If you don't know how to get these files out of the server use the following:
+```
+
+itaklink=$(curl --upload-file /root/itak.zip https://transfer.sh/itak.zip)
+ataklink=$(curl --upload-file /root/atak.zip https://transfer.sh/atak.zip)
+
+#Post links
+echo "Download and make copies of the following files for the different platforms"
+echo "Itak:" $itaklink
+echo "Atak:" $ataklink
+```
