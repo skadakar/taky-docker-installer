@@ -3,7 +3,7 @@
 #### Warning: 
 ```
 This guide will assume you are a moron and insult your intelligence.. 
-It will also assume you can make yourself an SSH keypair and upload the public key to digital ocean and use SSH if you go with method #2. 
+It will also assume you are able to remote into a ubuntu instance, I recommend digitalocean.com 
 I take no responsibility for anything here.. none!
 
 You must have port 8089 and 8443 open for this to work, the guide and the script assumes you run a pretty standard ubuntu install.
