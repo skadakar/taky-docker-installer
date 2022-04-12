@@ -31,30 +31,12 @@ docker-compose up -d && sleep 30s
 
 #Generating certifiactes and extracting them
 echo "Will attempt building the client"
-docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client client" && sleep 10s
-unzip /root/taky-data/client.zip  -d /root/dp-base
-
-#Getting templates
-wget https://raw.githubusercontent.com/skadakar/taky-itak/main/template/atak.pref
-wget https://raw.githubusercontent.com/skadakar/taky-itak/main/template/itak.pref
-
-#Adding correct IP to templates
-sed -i "s|0.0.0.0|$IP|g" *.pref
-rm /root/dp-base/certs/fts.pref
-sed -i "s|fts.pref|preference.pref|g" /root/dp-base/MANIFEST/manifest.xml
+docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client --is_itak itak" && sleep 10s
+docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client atak" && sleep 10s
 
 #Creating itak package
-cp /root/itak.pref /root/dp-base/certs/preference.pref
-cd /root/dp-base/ && zip -r /root/itak.zip . && cd /root
-
-
-#Creating atak package
-cp /root/atak.pref /root/dp-base/certs/preference.pref
-cd /root/dp-base/ && zip -r /root/atak.zip . && cd /root
-#Sending files to transfer.sh where they will live for up to 14 days.
-
-itaklink=$(curl --upload-file /root/itak.zip https://transfer.sh/itak.zip)
-ataklink=$(curl --upload-file /root/atak.zip https://transfer.sh/atak.zip)
+itaklink=$(curl --upload-file /root/taky-data/itak.zip https://transfer.sh/itak.zip)
+ataklink=$(curl --upload-file /root/taky-data/atak.zip https://transfer.sh/atak.zip)
 
 #Post links
 echo " "
