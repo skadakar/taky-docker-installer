@@ -2,7 +2,7 @@
 version: "3.7"
 services:
    taky-cot:
-    image: skadakar/taky:0.8.2
+    image: skadakar/taky:0.8.3
     container_name: taky-cot
     user: "1000"
     network_mode: host
@@ -20,7 +20,7 @@ services:
     volumes:
       - /root/taky-data/:/data
    taky-data:
-    image: skadakar/taky:0.8.2
+    image: skadakar/taky:0.8.3
     container_name: taky-data
     user: "1000"
     network_mode: host
