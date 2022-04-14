@@ -23,7 +23,6 @@ Troubleshooting:
 If it fails, remove the files and start over like so:
 ```
 docker-compose down --remove-orphans
-rm *.*
 rm -rf taky-data/
 ```
 
