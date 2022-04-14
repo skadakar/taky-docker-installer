@@ -1,3 +1,5 @@
+# Due to some small changes in the image it's currently not working without self provided certs, will fix.. eventually.. probably.
+
 # How to setup a taky server in a way that works with itak
 
 #### Disclaimer: 
