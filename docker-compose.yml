@@ -7,7 +7,6 @@ services:
     user: "1000"
     network_mode: host
     ports:
-      - 8087:8087
       - 8089:8089
     restart: unless-stopped
     environment:
@@ -25,7 +24,6 @@ services:
     user: "1000"
     network_mode: host
     ports:
-      - 8080:8080
       - 8443:8443
     restart: unless-stopped
     environment:
