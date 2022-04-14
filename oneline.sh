@@ -19,7 +19,7 @@ export $(grep -v '^#' .env | xargs)
 
 #Creating folders
 mkdir -p /root/taky-data
-chgrp 1000 /root/taky-data
+chgrp 1000 -R /root/taky-data
 chown 1000 -R /root/taky-data
 
 #Downloading docker compose template 
