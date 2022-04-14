@@ -37,6 +37,7 @@ rm -rf taky-data/
 ![image](https://user-images.githubusercontent.com/25975089/163419111-7ec8a39b-d88b-4835-9b25-2354127022d1.png)
 
 ![image](https://user-images.githubusercontent.com/25975089/163419470-aec97861-9abc-4069-96ae-880e32988567.png)
+* Give the server 5min to complete all its behind the scene tomfoolery before continuing.
 * Open console
 
 ![image](https://user-images.githubusercontent.com/25975089/163419522-1a281372-2fa9-40b3-bbbe-465e46a9b8d5.png)
