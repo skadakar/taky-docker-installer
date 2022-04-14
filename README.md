@@ -30,9 +30,14 @@ rm -rf dp-base/ taky-data/
 ## Method 2: Setting up an itak compatible taky server using docker on digital ocean.
 
 * Setup a 5dollar dropplet on [DigitalOcean](https://digitalocean.com)
-![image](https://user-images.githubusercontent.com/25975089/162523986-470dbc4b-65dc-44db-a32f-a07b39c645f8.png)
-
-* SSH into the droplet and run the following commands in order.
+![image](https://user-images.githubusercontent.com/25975089/163419309-e6e83482-7605-4a01-86fe-85d8daf5de87.png)
+* Select the cheap one and wait
+![image](https://user-images.githubusercontent.com/25975089/163419111-7ec8a39b-d88b-4835-9b25-2354127022d1.png)
+* 
+![image](https://user-images.githubusercontent.com/25975089/163419470-aec97861-9abc-4069-96ae-880e32988567.png)
+* Open console
+![image](https://user-images.githubusercontent.com/25975089/163419522-1a281372-2fa9-40b3-bbbe-465e46a9b8d5.png)
+* Run the following commands in order.
 ```
 apt-get update
 apt-get upgrade -y
