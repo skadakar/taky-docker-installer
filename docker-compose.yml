@@ -6,7 +6,6 @@ services:
     container_name: taky-cert
     user: "1000"
     network_mode: host
-    restart: unless-stopped
     environment:
       - ssl_enabled=true
       - client_cert_required=true
