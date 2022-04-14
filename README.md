@@ -1,4 +1,4 @@
-# How to setup a taky server in a way that works with itak
+# How to setup a taky server in a way that works with itak.
 
 #### Disclaimer: 
 ```
@@ -6,7 +6,7 @@ This guide will take you through the needed steps to setup a taky server using d
 It will also create the client files for users to connect.
 
 It assumes that you know how to remote into a server and that you are running a pretty standard ubuntu. 
-It's only been validated on a digitalocean.com droplet. 
+It's only been validated on a digitalocean.com droplet - Any other platform might need tweaking. 
 
 You must have port 8089 and 8443 open for this to work.
 
