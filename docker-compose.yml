@@ -1,6 +1,21 @@
 # Basic SSL enabled taky setup for oneliner install
 version: "3.7"
 services:
+   taky-cert:
+    image: skadakar/taky:0.8.3
+    container_name: taky-cert
+    user: "1000"
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      - ssl_enabled=true
+      - client_cert_required=true
+      - mode=certgen
+      - public_ip=${IP}
+      - hostname=${ID}
+      - fqdnoverride=${IP}:8443
+    volumes:
+      - /root/taky-data/:/data
    taky-cot:
     image: skadakar/taky:0.8.3
     container_name: taky-cot
