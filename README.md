@@ -24,7 +24,7 @@ If it fails, remove the files and start over like so:
 ```
 docker-compose down --remove-orphans
 rm *.*
-rm -rf dp-base/ taky-data/
+rm -rf taky-data/
 ```
 
 ## Method 2: Setting up an itak compatible taky server using docker on digital ocean.
