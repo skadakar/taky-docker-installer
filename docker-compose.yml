@@ -1,6 +1,7 @@
 # Basic SSL enabled taky setup for oneliner install
 version: "3.7"
 services:
+#This generates the certificates
    taky-cert:
     image: skadakar/taky:0.8.3
     container_name: taky-cert
@@ -15,6 +16,8 @@ services:
       - fqdnoverride=${IP}:8443
     volumes:
       - /root/taky-data/:/data
+
+#This is responsible for routing messages
    taky-cot:
     image: skadakar/taky:0.8.3
     container_name: taky-cot
@@ -32,6 +35,8 @@ services:
       - fqdnoverride=${IP}:8443
     volumes:
       - /root/taky-data/:/data
+      
+#This is responsible for routing data
    taky-data:
     image: skadakar/taky:0.8.3
     container_name: taky-data
