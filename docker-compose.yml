@@ -12,9 +12,9 @@ services:
       - ssl_enabled=true
       - client_cert_required=true
       - mode=cot
+      - bind_ip=$IP
       - public_ip=${IP}
       - hostname=${ID}
-      - fqdnoverride=${IP}:8443
     volumes:
       - /root/taky-data/:/data
       
@@ -29,8 +29,8 @@ services:
       - ssl_enabled=true
       - client_cert_required=true
       - mode=data
+      - bind_ip=$IP
       - public_ip=${IP}
       - hostname=${ID}
-      - fqdnoverride=${IP}:8443
     volumes:
       - /root/taky-data/:/data
