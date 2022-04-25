@@ -23,7 +23,7 @@ export $(grep -v '^#' .env | xargs)
 sleep 10s
 
 echo "Exported env variables, if blank things will not work!"
-echo "Hostname:" + $hostname
+echo "ID:" + $ID
 echo "IP" + $IP
 
 #Creating folders
