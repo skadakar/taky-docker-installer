@@ -15,7 +15,16 @@ hostname=$(hostname)
 ip4=$(curl ifconfig.io/ip)
 echo "ID="$hostname > .env
 echo "IP="$ip4 >> .env
+
+sleep 5s
+
 export $(grep -v '^#' .env | xargs)
+
+sleep 10s
+
+echo "Exported env variables, if blank things will not work!"
+echo "Hostname:" + $hostname
+echo "IP" + $IP
 
 #Creating folders
 mkdir -p /root/taky-data
