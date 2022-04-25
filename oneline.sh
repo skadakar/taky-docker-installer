@@ -37,7 +37,12 @@ wget https://raw.githubusercontent.com/skadakar/taky-itak/main/docker-compose.ym
 docker pull skadakar/taky:0.8.3
 
 #Starting taky servers in docker 
-docker-compose up -d && sleep 30s
+echo "Starting everything to generate configs and certs"
+docker-compose up -d && sleep 20s
+echo "Stopping everything one time to load with config and certs"
+docker-compose down --remove-orphans && sleep 20s
+echo "Starting taky a finale time"
+docker-compose up -d && sleep 20s
 
 #Generating certifiactes and extracting them
 echo "Will attempt building the client"
