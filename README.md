@@ -46,7 +46,7 @@ rm -rf taky-data/
 apt-get update
 apt-get upgrade -y
 apt-get install zip -y
-sudo apt-get install unzip -y
+apt-get install unzip -y
 apt-get install docker -y
 apt-get install docker-compose -y
 cd /root/ 
