@@ -18,7 +18,7 @@ If this does not work for you setting up a server is not for you and you should 
 
 ## Method 1: Run a shady script from some guy you don't know!
 ```
-curl -sf -L https://raw.githubusercontent.com/skadakar/taky-itak/main/oneline.sh | sudo sh
+curl -sf -L https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/oneline.sh | sudo sh
 ```
 
 Troubleshooting:
@@ -60,7 +60,7 @@ export $(grep -v '^#' .env | xargs)
 mkdir -p /root/taky-data
 chgrp 1000 /root/taky-data
 chown 1000 -R /root/taky-data
-wget https://raw.githubusercontent.com/skadakar/taky-itak/main/docker-compose.yml
+wget https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/docker-compose.yml
 docker pull skadakar/taky:0.8.3
 docker-compose up -d && sleep 30s
 docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client --is_itak itak" && sleep 10s
