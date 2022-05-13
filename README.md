@@ -1,9 +1,11 @@
-# How to setup a taky server in a way that works with itak.
+# Install script for taky running in docker with sensible defaults.
 
 #### Disclaimer: 
 ```
+Target audience: People who want to play with itak/atak/wintak without actually having the skills to setup a server themselves. 
+
 This guide will take you through the needed steps to setup a taky server using docker.
-It will also create the client files for users to connect.
+It will also create the client files for users to connect. These files will be uploaded to a temp hosting site and links provided to you.
 
 It assumes that you know how to remote into a server and that you are running a pretty standard ubuntu. 
 It's only been validated on a digitalocean.com droplet - Any other platform might need tweaking. 
