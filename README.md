@@ -28,7 +28,7 @@ docker-compose down --remove-orphans
 rm -rf taky-data/
 ```
 
-## Method 2: Setting up an itak compatible taky server using docker on digital ocean.
+## Method 2: Setting up a taky server using docker on digital ocean.
 
 * Setup a 5dollar dropplet on [DigitalOcean](https://digitalocean.com)
 
