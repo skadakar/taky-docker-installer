@@ -3,7 +3,6 @@
 #Getting required software
 apt-get update
 apt-get upgrade -y
-apt-get install zip -y
 apt-get install docker -y
 apt-get install docker-compose -y
 
