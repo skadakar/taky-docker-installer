@@ -1,8 +1,14 @@
 #/bin/bash
 
 #Getting required software
-apt-get update
-apt-get upgrade -y
+apt-get update -qy
+# Silent upgrade
+DEBIAN_FRONTEND=noninteractive \
+apt-get \
+-o Dpkg::Options::="--force-confold" \
+-fuy \
+upgrade -y
+
 apt-get install docker -y
 apt-get install docker-compose -y
 
