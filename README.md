@@ -1,21 +1,22 @@
 # Install script for taky running in docker with sensible defaults.
 
 #### Disclaimer: 
-```
-Target audience: People who want to play with itak/atak/wintak without actually having the skills to setup a server themselves. 
 
-This guide will take you through the needed steps to setup a taky server using docker.
-It will also create the client files for users to connect. These files will be uploaded to a temp hosting site and links provided to you.
+>Target audience: People who want to play with itak/atak/wintak without actually having the skills to setup a server themselves. 
+>
+>This guide will take you through the needed steps to setup a taky server using docker.
+>It will also create the client files for users to connect. These files will be uploaded to a temp hosting site and links provided to you.
+>
+>It assumes that you know how to remote into a server and that you are running a pretty standard ubuntu. 
+>It's only been validated on a digitalocean.com droplet - Any other platform might need tweaking. 
+>
+>You must have port 8089 and 8443 open for this to work.
+>
+>I take no responsibility for anything here.. none!
 
-It assumes that you know how to remote into a server and that you are running a pretty standard ubuntu. 
-It's only been validated on a digitalocean.com droplet - Any other platform might need tweaking. 
-
-You must have port 8089 and 8443 open for this to work.
-
-I take no responsibility for anything here.. none!
-```
 If this does not work for you setting up a server is not for you and you should look at airsoft/larp stuff like https://www.ares-alpha.com/
 
+If you are new to using docker, this [cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) should cover all your needs.
 
 ## Method 1: Run a shady script from some guy you don't know!
 ```
@@ -28,8 +29,6 @@ If it fails, remove the files and start over like so:
 docker-compose down --remove-orphans
 rm -rf taky-data/
 ```
-
-General troubleshooting will require some basic docker knowledge, cheatsheet [here](https://dockerlabs.collabnix.com/docker/cheatsheet/).
 
 ## Method 2: Setting up a taky server using docker on digital ocean.
 
