@@ -16,6 +16,7 @@ I take no responsibility for anything here.. none!
 ```
 If this does not work for you setting up a server is not for you and you should look at airsoft/larp stuff like https://www.ares-alpha.com/
 
+
 ## Method 1: Run a shady script from some guy you don't know!
 ```
 curl -sf -L https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/oneline.sh | sudo sh
@@ -27,6 +28,8 @@ If it fails, remove the files and start over like so:
 docker-compose down --remove-orphans
 rm -rf taky-data/
 ```
+
+General troubleshooting will require some basic docker knowledge, cheatsheet [here](https://dockerlabs.collabnix.com/docker/cheatsheet/).
 
 ## Method 2: Setting up a taky server using docker on digital ocean.
 
