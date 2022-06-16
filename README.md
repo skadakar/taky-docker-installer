@@ -49,24 +49,34 @@ rm -rf taky-data/
 
 * Run the following commands in order.
 ```
-apt-get update
-apt-get upgrade -y
-apt-get install zip -y
+apt-get update -qy
+DEBIAN_FRONTEND=noninteractive \
+apt-get \
+-o Dpkg::Options::="--force-confold" \
+-fuy \
+upgrade -y
 apt-get install docker -y
 apt-get install docker-compose -y
 cd /root/ 
-#Setting env variables needed for later
 hostname=$(hostname)
 ip4=$(curl ifconfig.io/ip)
 echo "ID="$hostname > .env
 echo "IP="$ip4 >> .env
 export $(grep -v '^#' .env | xargs)
+echo "Exported env variables, if blank things will not work!"
+echo "ID:" + $ID
+echo "IP" + $IP
 mkdir -p /root/taky-data
-chgrp 1000 /root/taky-data
+chgrp 1000 -R /root/taky-data
 chown 1000 -R /root/taky-data
+rm /root/docker-compose.yml
 wget https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/docker-compose.yml
 docker pull skadakar/taky:0.8.3
-docker-compose up -d && sleep 30s
+echo "Starting everything to generate configs and certs"
+docker-compose up -d
+echo "Stopping everything one time to load with config and certs"
+docker-compose down --remove-orphans 
+docker-compose up -d 
 docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client --is_itak itak" && sleep 10s
 docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client atak" && sleep 10s
 ```
@@ -74,7 +84,6 @@ docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_c
 
 If you don't know how to get these files out of the server use the following, it will upload the files to a temporary (14day) semi-public store:
 ```
-
 itaklink=$(curl --upload-file /root/taky-data/itak.zip https://transfer.sh/itak.zip)
 ataklink=$(curl --upload-file /root/taky-data/atak.zip https://transfer.sh/atak.zip)
 
