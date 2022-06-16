@@ -10,13 +10,15 @@
 >It assumes that you know how to remote into a server and that you are running a pretty standard ubuntu. 
 >It's only been validated on a digitalocean.com droplet - Any other platform might need tweaking. 
 >
->You must have port 8089 and 8443 open for this to work.
->
 >I take no responsibility for anything here.. none!
 
 If this does not work for you setting up a server is not for you and you should look at airsoft/larp stuff like https://www.ares-alpha.com/
 
 If you are new to using docker, this [cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) should cover all your needs.
+
+You must have port 8089 and 8443 open for this to work.
+
+-------------
 
 ## Method 1: Run a shady script from some guy you don't know!
 ```
