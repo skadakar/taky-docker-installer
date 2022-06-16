@@ -77,8 +77,8 @@ docker-compose up -d
 echo "Stopping everything one time to load with config and certs"
 docker-compose down --remove-orphans 
 docker-compose up -d 
-docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client --is_itak itak" && sleep 10s
-docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client atak" && sleep 10s
+docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client --is_itak itak" 
+docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client atak" 
 ```
 * Distribute as needed
 
