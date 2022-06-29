@@ -16,7 +16,7 @@ If this does not work for you setting up a server is not for you and you should 
 
 If you are new to using docker, this [cheatsheet](https://dockerlabs.collabnix.com/docker/cheatsheet/) should cover all your needs.
 
-You must have port 8089 and 8443 open for this to work.
+You must have port 8089 and 8443 open for this to work. Using this in AWS fails for unknown reasons.. 
 
 -------------
 
