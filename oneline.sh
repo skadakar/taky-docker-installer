@@ -38,7 +38,7 @@ chown 1000 -R /root/taky-data
 #Downloading docker compose template 
 rm /root/docker-compose.yml
 wget https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/docker-compose.yml
-docker pull skadakar/taky:0.8.3
+docker pull skadakar/taky:latest
 
 #Starting taky servers in docker 
 echo "Starting everything to generate configs and certs"
