@@ -60,6 +60,7 @@ ataklink=$(curl --upload-file /root/taky-data/atak.zip https://transfer.sh/atak.
 #Post links
 echo " "
 echo "Download and make copies of the following files for the different platforms"
+echo "Links expire in 14 days."
 echo " "
 echo "Itak:" $itaklink
 echo "Atak:" $ataklink
