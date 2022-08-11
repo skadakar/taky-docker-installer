@@ -71,7 +71,7 @@ chgrp 1000 -R /root/taky-data
 chown 1000 -R /root/taky-data
 rm /root/docker-compose.yml
 wget https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/docker-compose.yml
-docker pull skadakar/taky:0.8.3
+docker pull skadakar/taky:latest
 echo "Starting everything to generate configs and certs"
 docker-compose up -d
 echo "Stopping everything one time to load with config and certs"
