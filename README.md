@@ -50,11 +50,6 @@ rm -rf taky-data/
 * Run the following commands in order.
 ```
 apt-get update -qy
-DEBIAN_FRONTEND=noninteractive \
-apt-get \
--o Dpkg::Options::="--force-confold" \
--fuy \
-upgrade -y
 apt-get install docker -y
 apt-get install docker-compose -y
 cd /root/ 
