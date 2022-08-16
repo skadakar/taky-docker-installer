@@ -55,6 +55,6 @@ echo " "
 echo "Download and make copies of the following files for the different platforms"
 echo "Links expire in 14 days."
 echo " "
-echo "Itak:" $itaklink
-echo "Atak:" $ataklink
+echo "ITAK:" $itaklink
+echo "ATAK/WinTAK:" $ataklink
 echo " "
