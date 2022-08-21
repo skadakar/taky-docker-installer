@@ -22,7 +22,7 @@ You must have port 8089 and 8443 open for this to work. Using this in AWS fails 
 
 ## Method 1: Run a shady script from some guy you don't know!
 ```
-curl -sf -L https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/oneline.sh | sudo sh
+curl -sf -L https://raw.githubusercontent.com/skadakar/taky-docker-installer/ASN-TAK-QD/oneline.sh | sudo sh
 ```
 
 Troubleshooting:
