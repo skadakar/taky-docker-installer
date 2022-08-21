@@ -3,7 +3,7 @@ version: "3.7"
 services:
 #This is responsible for routing messages
    taky-cot:
-    image: skadakar/taky:latest
+    image: skadakar/taky:ssl-fix
     container_name: taky-cot
     user: "1000"
     network_mode: host
@@ -20,7 +20,7 @@ services:
       
 #This is responsible for routing data
    taky-data:
-    image: skadakar/taky:latest
+    image: skadakar/taky:ssl-fix
     container_name: taky-data
     user: "1000"
     network_mode: host
