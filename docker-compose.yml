@@ -14,7 +14,6 @@ services:
       - mode=cot
       - bind_ip=$IP
       - public_ip=${IP}
-      - hostname=${IP}
     volumes:
       - /root/taky-data/:/data
       
@@ -31,6 +30,5 @@ services:
       - mode=data
       - bind_ip=$IP
       - public_ip=${IP}
-      - hostname=${IP}
     volumes:
       - /root/taky-data/:/data
