@@ -3,7 +3,7 @@ version: "3.7"
 services:
 #This is responsible for routing messages
    taky-cot:
-    image: skadakar/taky:ssl-fix
+    image: skadakar/taky:0.8.1
     container_name: taky-cot
     user: "1000"
     network_mode: host
@@ -14,13 +14,13 @@ services:
       - mode=cot
       - bind_ip=$IP
       - public_ip=${IP}
-      - hostname=test.snekwerks.com
+      - hostname=temp.airsoftnorge.com
     volumes:
       - /root/taky-data/:/data
       
 #This is responsible for routing data
    taky-data:
-    image: skadakar/taky:ssl-fix
+    image: skadakar/taky:0.8.1
     container_name: taky-data
     user: "1000"
     network_mode: host
@@ -31,6 +31,6 @@ services:
       - mode=data
       - bind_ip=$IP
       - public_ip=${IP}
-      - hostname=test.snekwerks.com
+      - hostname=temp.airsoftnorge.com
     volumes:
       - /root/taky-data/:/data
