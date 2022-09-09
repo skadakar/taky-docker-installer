@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
     environment:
       - ssl_enabled=true
-      - client_cert_required=false
+      #- client_cert_required=false
       - mode=cot
       - bind_ip=$IP
       - public_ip=${IP}
@@ -29,7 +29,7 @@ services:
     restart: unless-stopped
     environment:
       - ssl_enabled=true
-      - client_cert_required=false
+      #- client_cert_required=false
       - mode=data
       - bind_ip=$IP
       - public_ip=${IP}
