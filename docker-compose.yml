@@ -10,9 +10,9 @@ services:
     restart: unless-stopped
     environment:
       - ssl_enabled=true
-      #- client_cert_required=true
+      - client_cert_required=false
       - mode=cot
-      #- bind_ip=$IP
+      - bind_ip=$IP
       - public_ip=${IP}
       - hostname=temp.airsoftnorge.com
     volumes:
@@ -20,6 +20,7 @@ services:
       
 #This is responsible for routing data
    taky-data:
+    depends_on: taky-cot
     image: skadakar/taky:debug
     container_name: taky-data
     user: "1000"
@@ -27,9 +28,9 @@ services:
     restart: unless-stopped
     environment:
       - ssl_enabled=true
-      #- client_cert_required=true
+      - client_cert_required=false
       - mode=data
-      #- bind_ip=$IP
+      - bind_ip=$IP
       - public_ip=${IP}
       - hostname=temp.airsoftnorge.com
     volumes:
