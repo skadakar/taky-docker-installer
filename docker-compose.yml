@@ -20,7 +20,8 @@ services:
       
 #This is responsible for routing data
    taky-data:
-    depends_on: taky-cot
+    depends_on: 
+      - taky-cot
     image: skadakar/taky:debug
     container_name: taky-data
     user: "1000"
