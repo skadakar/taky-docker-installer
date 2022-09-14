@@ -10,14 +10,13 @@ services:
     restart: unless-stopped
     environment:
       - ssl_enabled=true
-      #- client_cert_required=false
+      - mon_port=1337
       - mode=cot
       - bind_ip=$IP
       - public_ip=${IP}
-      - hostname=temp.airsoftnorge.com
+      - hostname=stas.snekwerks.com
     volumes:
       - /root/taky-data/:/data
-      
 #This is responsible for routing data
    taky-data:
     depends_on:
@@ -29,10 +28,28 @@ services:
     restart: unless-stopped
     environment:
       - ssl_enabled=true
-      #- client_cert_required=false
+      - mon_port=1337
       - mode=data
       - bind_ip=$IP
       - public_ip=${IP}
-      - hostname=temp.airsoftnorge.com
+      - hostname=stas.snekwerks.com
     volumes:
       - /root/taky-data/:/data
+#RTSP - Video streaming server
+   rtsp-server:
+    image: aler9/rtsp-simple-server
+    container_name: rtsp-server
+    user: "1000"
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      - RTSP_PROTOCOLS=tcp
+#RTSP-ASN-SIDECAR - Contains a bot to do some helpful things
+   node-red:
+    container_name: taky-asn-sidecar
+    user: "1000"
+    network_mode: host
+    restart: unless-stopped
+    image: skadakar/taky-asn-sidecar:latest
+    environment:
+      - SERVER_ID=${ID}
