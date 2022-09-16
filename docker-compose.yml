@@ -12,9 +12,6 @@ services:
       - ssl_enabled=true
       - mon_port=1337
       - mode=cot
-      - bind_ip=$IP
-      - public_ip=${IP}
-      - hostname=stas.snekwerks.com
     volumes:
       - /root/taky-data/:/data
 #This is responsible for routing data
@@ -30,9 +27,6 @@ services:
       - ssl_enabled=true
       - mon_port=1337
       - mode=data
-      - bind_ip=$IP
-      - public_ip=${IP}
-      - hostname=stas.snekwerks.com
     volumes:
       - /root/taky-data/:/data
 #RTSP - Video streaming server
