@@ -3,34 +3,23 @@ version: "3.7"
 services:
 #This is responsible for routing messages
    taky-cot:
-    image: skadakar/taky:latest
+    image: skadakar/taky:safepoint
     container_name: taky-cot
     user: "1000"
     network_mode: host
     restart: unless-stopped
     environment:
-      - ssl_enabled=true
-      - client_cert_required=true
       - mode=cot
-      - bind_ip=$IP
-      - public_ip=${IP}
-      - hostname=${ID}
     volumes:
-      - /root/taky-data/:/data
-      
+      - /root/taky-data/:/data      
 #This is responsible for routing data
    taky-data:
-    image: skadakar/taky:latest
+    image: skadakar/taky:safepoint
     container_name: taky-data
     user: "1000"
     network_mode: host
     restart: unless-stopped
     environment:
-      - ssl_enabled=true
-      - client_cert_required=true
       - mode=data
-      - bind_ip=$IP
-      - public_ip=${IP}
-      - hostname=${ID}
     volumes:
       - /root/taky-data/:/data
