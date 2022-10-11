@@ -47,3 +47,4 @@ services:
     image: skadakar/taky-asn-sidecar:latest
     environment:
       - SERVER_ID=${ID}
+      - MON_PORT=1337
