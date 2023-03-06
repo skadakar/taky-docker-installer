@@ -3,7 +3,7 @@ version: "3.7"
 services:
 #This is responsible for routing messages
    taky-cot:
-    image: skadakar/taky:safepoint
+    image: skadakar/taky:0.9
     container_name: taky-cot
     user: "1000"
     network_mode: host
@@ -18,7 +18,7 @@ services:
    taky-data:
     depends_on:
       - taky-cot
-    image: skadakar/taky:safepoint
+    image: skadakar/taky:0.9
     container_name: taky-data
     user: "1000"
     network_mode: host
