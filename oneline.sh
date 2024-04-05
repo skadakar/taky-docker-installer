@@ -30,8 +30,8 @@ chown 1000 -R /root/taky-data
 
 #Downloading docker compose template 
 rm /root/docker-compose.yml
-wget https://raw.githubusercontent.com/skadakar/taky-docker-installer/ASN-TAK-QD/docker-compose.yml
-docker pull skadakar/taky:latest
+wget https://raw.githubusercontent.com/skadakar/taky-docker-installer/main/docker-compose.yml
+docker pull skadakar/taky:safepoint
 
 #Starting taky servers in docker 
 echo "Starting everything to generate configs and certs"
@@ -47,8 +47,8 @@ docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_c
 docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client atak" && sleep 10s
 
 #Creating itak package
-itaklink=$(curl --upload-file /root/taky-data/itak.zip https://transfer.sh/itak.zip)
-ataklink=$(curl --upload-file /root/taky-data/atak.zip https://transfer.sh/atak.zip)
+itaklink=$(curl bashupload.com -T /root/taky-data/itak.zip)|grep -o 'http://.*zip'
+ataklink=$(curl bashupload.com -T /root/taky-data/atak.zip)|grep -o 'http://.*zip'
 
 #Post links
 echo " "
