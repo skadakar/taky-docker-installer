@@ -47,8 +47,8 @@ docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_c
 docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_client atak" && sleep 10s
 
 #Creating itak package
-itaklink=$(curl bashupload.com -T /root/taky-data/itak.zip)
-ataklink=$(curl bashupload.com -T /root/taky-data/atak.zip)
+itaklink=$(curl bashupload.com -T /root/taky-data/itak.zip)|grep -o 'http://.*zip'
+ataklink=$(curl bashupload.com -T /root/taky-data/atak.zip)|grep -o 'http://.*zip'
 
 #Post links
 echo " "
