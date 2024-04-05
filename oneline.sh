@@ -53,7 +53,7 @@ ataklink=$(curl bashupload.com -T /root/taky-data/atak.zip|grep -o 'http://.*zip
 #Post links
 echo " "
 echo "Download and make copies of the following files for the different platforms"
-echo "Links expire in 14 days."
+echo "Links expire in 3 days and can only be downloaded once."
 echo " "
 echo "ITAK:" $itaklink
 echo "ATAK/WinTAK:" $ataklink
