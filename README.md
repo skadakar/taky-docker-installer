@@ -79,8 +79,8 @@ docker exec taky-cot bash -c "cd /data/; takyctl -c /data/conf/taky.conf build_c
 
 If you don't know how to get these files out of the server use the following, it will upload the files to a temporary (14day) semi-public store:
 ```
-itaklink=$(curl --upload-file /root/taky-data/itak.zip https://transfer.sh/itak.zip)
-ataklink=$(curl --upload-file /root/taky-data/atak.zip https://transfer.sh/atak.zip)
+itaklink=$(curl bashupload.com -T /root/taky-data/itak.zip|grep -o 'http://.*zip')
+ataklink=$(curl bashupload.com -T /root/taky-data/atak.zip|grep -o 'http://.*zip')
 
 echo "Download and make copies of the following files for the different platforms"
 echo "Links will expire in 14 days."
